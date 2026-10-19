@@ -145,7 +145,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+  }
+  /* El desfase bajo el header sticky va en scroll-margin de los destinos de ancla, no en
+     scroll-padding del html: Next.js compara el inicio de cada página con scroll-padding-top
+     y, si lo cree oculto, hace scroll hacia abajo al navegar (sobre todo en móvil). */
+  [id] {
+    scroll-margin-top: 5.5rem;
   }
   body {
     background-color: var(--color-abyss);

@@ -55,7 +55,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className={`${manrope.variable} ${plexMono.variable}`}>
+    <html lang="es" data-scroll-behavior="smooth" className={`${manrope.variable} ${plexMono.variable}`}>
       <body className="bg-abyss font-sans text-ink antialiased">
         <a
           href="#contenido"
