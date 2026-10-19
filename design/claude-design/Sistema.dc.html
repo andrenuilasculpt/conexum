@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CONEXUM · Sistema visual y componentes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#081827}
+*,*::before,*::after{box-sizing:border-box}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+a{color:#F6FAFD;text-decoration:none}
+a:hover{color:#18B89C}
+.cx-mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+</style>
+</helmet>
+<div style="width:1440px;height:2200px;box-sizing:border-box;padding:80px;background:#081827;color:#F6FAFD;font-family:Manrope,'Segoe UI',system-ui,sans-serif;display:flex;flex-direction:column;gap:56px">
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(146,167,184,.2)">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">CONEXUM · DEMO COMERCIAL · HANDOFF</p>
+<h1 style="font-size:56px;line-height:1.04;letter-spacing:-.04em;font-weight:600">Sistema visual y componentes</h1>
+</div>
+<p style="max-width:460px;font-size:16px;line-height:1.6;color:#A9BBCA">Base para la implementación en React, TypeScript y Tailwind. Textos, correo y assets centralizados en configuración; logotipo sustituible sin tocar las páginas.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px">
+
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;justify-content:space-between">
+<h2 style="font-size:22px;font-weight:600;letter-spacing:-.01em">BrandLogo</h2>
+<span class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#081827;background:#18B89C;border-radius:3px;padding:6px 10px">LOGO PLACEHOLDER · REEMPLAZAR</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+<div style="height:200px;border:1px dashed rgba(146,167,184,.5);border-radius:8px;background:#0B2033;display:flex;align-items:center;justify-content:center;gap:16px">
+<svg width="48" height="48" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M22 5H8.5A3.5 3.5 0 0 0 5 8.5v11A3.5 3.5 0 0 0 8.5 23H22" stroke="#F6FAFD" stroke-width="1.6"></path><path d="M5 14h7" stroke="#3977C8" stroke-width="1.6"></path><circle cx="22" cy="5" r="2.4" fill="#F6FAFD"></circle><circle cx="22" cy="23" r="2.4" fill="#F6FAFD"></circle><circle cx="15.5" cy="14" r="3" fill="#18B89C"></circle></svg>
+<span style="font-size:24px;font-weight:700;letter-spacing:.22em">CONEXUM</span>
+</div>
+<div style="height:200px;border:1px dashed rgba(8,24,39,.35);border-radius:8px;background:#F6FAFD;display:flex;align-items:center;justify-content:center;gap:16px;color:#081827">
+<svg width="48" height="48" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M22 5H8.5A3.5 3.5 0 0 0 5 8.5v11A3.5 3.5 0 0 0 8.5 23H22" stroke="#081827" stroke-width="1.6"></path><path d="M5 14h7" stroke="#3977C8" stroke-width="1.6"></path><circle cx="22" cy="5" r="2.4" fill="#081827"></circle><circle cx="22" cy="23" r="2.4" fill="#081827"></circle><circle cx="15.5" cy="14" r="3" fill="#0E7C69"></circle></svg>
+<span style="font-size:24px;font-weight:700;letter-spacing:.22em">CONEXUM</span>
+</div>
+</div>
+<dl style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px 20px;font-size:14px;line-height:1.55">
+<dt class="cx-mono" style="font-size:11px;letter-spacing:.12em;color:#92A7B8;padding-top:2px">PROP</dt><dd style="color:#D5E1EB">logoSrc · por defecto /brand/conexum-logo.svg</dd>
+<dt class="cx-mono" style="font-size:11px;letter-spacing:.12em;color:#92A7B8;padding-top:2px">ARCHIVO</dt><dd style="color:#D5E1EB">public/brand/conexum-logo.svg (placeholder)</dd>
+<dt class="cx-mono" style="font-size:11px;letter-spacing:.12em;color:#92A7B8;padding-top:2px">NOTA</dt><dd style="color:#A9BBCA">Lockup temporal de texto e isotipo abstracto. No es la identidad definitiva: sustituir el archivo cuando exista el logotipo aprobado.</dd>
+</dl>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:20px">
+<h2 style="font-size:22px;font-weight:600;letter-spacing:-.01em">Color</h2>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+<li style="border:1px solid rgba(146,167,184,.22);border-radius:6px;overflow:hidden"><div style="height:72px;background:#081827;border-bottom:1px solid rgba(146,167,184,.22)"></div><div style="padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">Navy</span><span class="cx-mono" style="font-size:12px;color:#92A7B8">#081827 · fondo</span></div></li>
+<li style="border:1px solid rgba(146,167,184,.22);border-radius:6px;overflow:hidden"><div style="height:72px;background:#10283D"></div><div style="padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">Azul profundo</span><span class="cx-mono" style="font-size:12px;color:#92A7B8">#10283D · superficies</span></div></li>
+<li style="border:1px solid rgba(146,167,184,.22);border-radius:6px;overflow:hidden"><div style="height:72px;background:#F6FAFD"></div><div style="padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">Blanco</span><span class="cx-mono" style="font-size:12px;color:#92A7B8">#F6FAFD · texto, claros</span></div></li>
+<li style="border:1px solid rgba(146,167,184,.22);border-radius:6px;overflow:hidden"><div style="height:72px;background:#3977C8"></div><div style="padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">Azul acero</span><span class="cx-mono" style="font-size:12px;color:#92A7B8">#3977C8 · red, diagramas</span></div></li>
+<li style="border:1px solid rgba(146,167,184,.22);border-radius:6px;overflow:hidden"><div style="height:72px;background:#18B89C"></div><div style="padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">Teal</span><span class="cx-mono" style="font-size:12px;color:#92A7B8">#18B89C · estados, CTA</span></div></li>
+<li style="border:1px solid rgba(146,167,184,.22);border-radius:6px;overflow:hidden"><div style="height:72px;background:#92A7B8"></div><div style="padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">Gris técnico</span><span class="cx-mono" style="font-size:12px;color:#92A7B8">#92A7B8 · secundario</span></div></li>
+</ul>
+<p class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8;padding-top:6px">VARIANTES ACCESIBLES (CONTRASTE AA)</p>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px">
+<li style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:4px;background:#6E9FE0;flex:none"></span><span class="cx-mono" style="font-size:11px;line-height:1.4;color:#A9BBCA">#6E9FE0<br>acero en oscuro</span></li>
+<li style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:4px;background:#2A5FA8;flex:none"></span><span class="cx-mono" style="font-size:11px;line-height:1.4;color:#A9BBCA">#2A5FA8<br>acero en claro</span></li>
+<li style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:4px;background:#0E7C69;flex:none"></span><span class="cx-mono" style="font-size:11px;line-height:1.4;color:#A9BBCA">#0E7C69<br>teal en claro</span></li>
+<li style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:4px;background:#FF8F80;flex:none"></span><span class="cx-mono" style="font-size:11px;line-height:1.4;color:#A9BBCA">#FF8F80<br>error</span></li>
+</ul>
+<p style="font-size:14px;line-height:1.6;color:#A9BBCA">El teal se reserva para estados, foco y la acción principal. Sobre fondo claro, el texto en acero o teal usa siempre su variante oscura.</p>
+</div>
+
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;padding-top:48px;border-top:1px solid rgba(146,167,184,.16)">
+
+<div style="display:flex;flex-direction:column;gap:22px">
+<h2 style="font-size:22px;font-weight:600;letter-spacing:-.01em">Tipografía</h2>
+<div style="display:flex;flex-direction:column;gap:6px;padding-bottom:20px;border-bottom:1px solid rgba(146,167,184,.16)">
+<span class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8">DISPLAY · MANROPE 600 · 86 / 1.02 · −4%</span>
+<span style="font-size:64px;line-height:1.02;letter-spacing:-.04em;font-weight:600">La infraestructura invisible</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;padding-bottom:20px;border-bottom:1px solid rgba(146,167,184,.16)">
+<span class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8">H2 · MANROPE 600 · 56 / 1.06 · −3,5%</span>
+<span style="font-size:40px;line-height:1.06;letter-spacing:-.035em;font-weight:600">De la arquitectura a la operación.</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;padding-bottom:20px;border-bottom:1px solid rgba(146,167,184,.16)">
+<span class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8">H3 · MANROPE 600 · 22 / CUERPO · MANROPE 400 · 17 / 1.6</span>
+<span style="font-size:22px;font-weight:600;letter-spacing:-.015em">Network Engineering</span>
+<span style="font-size:17px;line-height:1.6;color:#A9BBCA">Diseño, routing y switching para campus, centro de datos y WAN, con criterios de resiliencia y crecimiento.</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<span class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8">ETIQUETA TÉCNICA · IBM PLEX MONO 400 · 12 · +16%</span>
+<span class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#F6FAFD">INFRAESTRUCTURA · NETWORK ENGINEERING · OPERACIONES</span>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:22px">
+<h2 style="font-size:22px;font-weight:600;letter-spacing:-.01em">Controles</h2>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<a href="#demo" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:4px;background:#18B89C;color:#081827;font-size:15px;font-weight:600">Principal <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a href="#demo" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:4px;border:1px solid rgba(246,250,253,.3);color:#F6FAFD;font-size:15px;font-weight:600">Secundario</a>
+<a href="#demo" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:4px;border:1px solid rgba(246,250,253,.3);color:#F6FAFD;font-size:15px;font-weight:600;outline:2px solid #18B89C;outline-offset:3px">Foco visible</a>
+<a href="#demo" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:600;color:#F6FAFD"><span style="border-bottom:1px solid rgba(24,184,156,.55);padding-bottom:3px">Enlace de acción</span></a>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:20px;border-radius:6px;background:#F6FAFD">
+<a href="#demo" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:4px;background:#081827;color:#F6FAFD;font-size:15px;font-weight:600">Principal sobre claro</a>
+<a href="#demo" style="display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:600;color:#081827"><span style="border-bottom:1px solid rgba(8,24,39,.35);padding-bottom:3px">info@conexum.one</span></a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<label for="sx-a" style="font-size:13px;font-weight:600">Campo</label>
+<input id="sx-a" type="text" value="Empresa S.A." style="width:100%;min-height:52px;padding:14px 16px;border:1px solid rgba(146,167,184,.38);border-radius:4px;background:rgba(246,250,253,.03);color:#F6FAFD;font-family:inherit;font-size:15px">
+<span class="cx-mono" style="font-size:10.5px;letter-spacing:.12em;color:#92A7B8">REPOSO</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<label for="sx-b" style="font-size:13px;font-weight:600">Campo</label>
+<input id="sx-b" type="text" value="nombre@empresa" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid #18B89C;border-radius:4px;background:rgba(24,184,156,.05);box-shadow:0 0 0 3px rgba(24,184,156,.2);color:#F6FAFD;font-family:inherit;font-size:15px">
+<span class="cx-mono" style="font-size:10.5px;letter-spacing:.12em;color:#18B89C">FOCO</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<label for="sx-c" style="font-size:13px;font-weight:600">Campo</label>
+<input id="sx-c" type="text" value="correo@" aria-invalid="true" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid #FF8F80;border-radius:4px;background:rgba(246,250,253,.03);color:#F6FAFD;font-family:inherit;font-size:15px">
+<span style="font-size:12px;color:#FF8F80">Introduzca un correo válido.</span>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<button type="button" aria-pressed="true" style="display:flex;align-items:flex-start;gap:16px;width:100%;padding:18px 20px;border:1px solid #18B89C;border-radius:6px;background:rgba(24,184,156,.07);color:#F6FAFD;font-family:inherit;text-align:left;cursor:pointer"><span style="flex:none;width:14px;height:14px;margin-top:4px;border-radius:50%;background:#18B89C"></span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Pestaña activa</span><span style="font-size:13px;color:#A9BBCA">Itinerarios de colaboración (Home)</span></span></button>
+<button type="button" aria-pressed="false" style="display:flex;align-items:flex-start;gap:16px;width:100%;padding:18px 20px;border:1px solid rgba(146,167,184,.22);border-radius:6px;background:transparent;color:#F6FAFD;font-family:inherit;text-align:left;cursor:pointer"><span style="flex:none;width:14px;height:14px;margin-top:4px;border-radius:50%;border:1.5px solid #92A7B8"></span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Pestaña en reposo</span><span style="font-size:13px;color:#A9BBCA">Borde fino, sin relleno</span></span></button>
+</div>
+</div>
+
+</div>
+
+<div style="display:flex;flex-direction:column;gap:20px;padding-top:48px;border-top:1px solid rgba(146,167,184,.16)">
+<h2 style="font-size:22px;font-weight:600;letter-spacing:-.01em">Mapa de componentes</h2>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(146,167,184,.22);border-left:1px solid rgba(146,167,184,.22)">
+<li style="display:flex;flex-direction:column;gap:10px;padding:24px;border-right:1px solid rgba(146,167,184,.22);border-bottom:1px solid rgba(146,167,184,.22)"><span class="cx-mono" style="font-size:13px;color:#18B89C">&lt;BrandLogo /&gt;</span><p style="font-size:14px;line-height:1.55;color:#A9BBCA">Lockup sustituible mediante logoSrc. Una sola instancia en cabecera y pie.</p></li>
+<li style="display:flex;flex-direction:column;gap:10px;padding:24px;border-right:1px solid rgba(146,167,184,.22);border-bottom:1px solid rgba(146,167,184,.22)"><span class="cx-mono" style="font-size:13px;color:#18B89C">&lt;SiteHeader /&gt;</span><p style="font-size:14px;line-height:1.55;color:#A9BBCA">Sticky con cristal sobrio. Menú hamburguesa por debajo de 960 px, aria-expanded y enlace activo.</p></li>
+<li style="display:flex;flex-direction:column;gap:10px;padding:24px;border-right:1px solid rgba(146,167,184,.22);border-bottom:1px solid rgba(146,167,184,.22)"><span class="cx-mono" style="font-size:13px;color:#18B89C">&lt;NetworkTopologyHero /&gt;</span><p style="font-size:14px;line-height:1.55;color:#A9BBCA">SVG con tráfico animado, pausa fuera del viewport, respeto a reduced motion e inspección con cursor en escritorio.</p></li>
+<li style="display:flex;flex-direction:column;gap:10px;padding:24px;border-right:1px solid rgba(146,167,184,.22);border-bottom:1px solid rgba(146,167,184,.22)"><span class="cx-mono" style="font-size:13px;color:#18B89C">&lt;ServiceCard /&gt;</span><p style="font-size:14px;line-height:1.55;color:#A9BBCA">Número, título, alcance, tecnologías, mini diagrama original y CTA. Alterna la posición del diagrama.</p></li>
+<li style="display:flex;flex-direction:column;gap:10px;padding:24px;border-right:1px solid rgba(146,167,184,.22);border-bottom:1px solid rgba(146,167,184,.22)"><span class="cx-mono" style="font-size:13px;color:#18B89C">&lt;ContactForm /&gt;</span><p style="font-size:14px;line-height:1.55;color:#A9BBCA">Validación en cliente y confirmación honesta en modo demo. Preparado para /api/contact con Resend o Formspree.</p></li>
+<li style="display:flex;flex-direction:column;gap:10px;padding:24px;border-right:1px solid rgba(146,167,184,.22);border-bottom:1px solid rgba(146,167,184,.22)"><span class="cx-mono" style="font-size:13px;color:#18B89C">&lt;SiteFooter /&gt;</span><p style="font-size:14px;line-height:1.55;color:#A9BBCA">Menú, resumen, correo provisional configurable y aviso de marcas de terceros.</p></li>
+</ul>
+<p class="cx-mono" style="font-size:12px;letter-spacing:.06em;line-height:1.7;color:#92A7B8">CONFIGURACIÓN CENTRAL · site.config.ts → contactEmail: "info@conexum.one" · navegación · textos · rutas de assets</p>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

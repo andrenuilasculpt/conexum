@@ -1,0 +1,22 @@
+# dependencias
+/node_modules
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# producción
+/build
+
+# entorno
+.env
+.env*.local
+
+# Vercel
+.vercel
+
+# sistema
+.DS_Store
+npm-debug.log*

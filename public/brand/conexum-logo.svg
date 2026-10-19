@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="28" viewBox="0 0 150 28" role="img" aria-label="CONEXUM">
+  <!--
+    LOGO PLACEHOLDER · REEMPLAZAR
+    Lockup temporal: isotipo abstracto + texto. No es la identidad definitiva.
+    Sustituir este archivo por el logotipo aprobado manteniendo el nombre
+    (o cambiar siteConfig.logoSrc / logoWidth / logoHeight en src/config/site.ts).
+    Versión pensada para fondos oscuros.
+  -->
+  <path d="M22 5H8.5A3.5 3.5 0 0 0 5 8.5v11A3.5 3.5 0 0 0 8.5 23H22" fill="none" stroke="#F6FAFD" stroke-width="1.6"/>
+  <path d="M5 14h7" stroke="#3977C8" stroke-width="1.6"/>
+  <circle cx="22" cy="5" r="2.4" fill="#F6FAFD"/>
+  <circle cx="22" cy="23" r="2.4" fill="#F6FAFD"/>
+  <circle cx="15.5" cy="14" r="3" fill="#18B89C"/>
+  <text x="40" y="19.5" fill="#F6FAFD" font-family="Manrope, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3.3">CONEXUM</text>
+</svg>

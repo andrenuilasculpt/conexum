@@ -1,0 +1,438 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Tokens CONEXUM
+   La paleta por defecto de Tailwind se elimina para que solo existan
+   los colores de marca y sus variantes accesibles.
+------------------------------------------------------------------ */
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Fondos */
+  --color-navy: #081827; /* fondo principal */
+  --color-abyss: #061420; /* pie y fondo de página */
+  --color-deep: #10283d; /* superficies destacadas */
+  --color-panel: #0b2033; /* paneles y tarjetas */
+  --color-node: #0d2338; /* relleno de nodos en diagramas */
+  --color-layer: #0f263b; /* capas del diagrama de arquitectura */
+
+  /* Texto y neutros */
+  --color-ink: #f6fafd; /* blanco de marca */
+  --color-haze: #e3ebf2;
+  --color-mist: #d5e1eb;
+  --color-soft: #b4c4d2;
+  --color-muted: #a9bbca;
+  --color-grey: #92a7b8; /* gris técnico */
+  --color-faint: #7f95a8;
+  --color-graphite: #4a5f72; /* texto secundario sobre claro */
+
+  /* Acentos */
+  --color-steel: #3977c8; /* azul acero: enlaces de red, diagramas */
+  --color-steel-light: #6e9fe0; /* acero para texto sobre oscuro */
+  --color-steel-dark: #2a5fa8; /* acero para texto sobre claro */
+  --color-teal: #18b89c; /* estados, foco y acción principal */
+  --color-teal-bright: #3fd0b5; /* hover de la acción principal */
+  --color-teal-dark: #0e7c69; /* teal para texto sobre claro */
+  --color-danger: #ff8f80; /* errores de validación */
+
+  /* Escala tipográfica fluida */
+  --text-display: clamp(2.25rem, 6.2vw, 5.375rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.04em;
+  --text-title: clamp(2.25rem, 5.8vw, 5.125rem);
+  --text-title--line-height: 1.02;
+  --text-title--letter-spacing: -0.04em;
+  --text-section: clamp(2rem, 4.2vw, 3.5rem);
+  --text-section--line-height: 1.06;
+  --text-section--letter-spacing: -0.035em;
+  --text-closing: clamp(2.25rem, 5.4vw, 4.75rem);
+  --text-closing--line-height: 1.02;
+  --text-closing--letter-spacing: -0.045em;
+  --text-module: clamp(1.75rem, 3.4vw, 2.75rem);
+  --text-module--line-height: 1.08;
+  --text-module--letter-spacing: -0.03em;
+  --text-lead: clamp(1.0625rem, 1.5vw, 1.25rem);
+  --text-lead--line-height: 1.55;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.6;
+  --text-label--letter-spacing: 0.16em;
+
+  --animate-rise: cx-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-blink: cx-blink 2.4s ease-in-out infinite;
+
+  @keyframes cx-rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes cx-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+}
+
+/* Variables de next/font (ver src/app/layout.tsx) */
+@theme inline {
+  --font-sans: var(--font-manrope), "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ------------------------------------------------------------------
+   Utilidades propias
+------------------------------------------------------------------ */
+@utility container-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+@utility section-y {
+  padding-block: clamp(5rem, 10vw, 8.5rem);
+}
+
+/* Rejilla fluida: grid-fit-260 → columnas de al menos 260 px que colapsan a 1 en móvil */
+@utility grid-fit-* {
+  grid-template-columns: repeat(auto-fit, minmax(min(calc(--value(integer) * 1px), 100%), 1fr));
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(rgb(146 167 184 / 0.13) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility blueprint {
+  background-image:
+    linear-gradient(rgb(146 167 184 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(146 167 184 / 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility glass {
+  background-color: rgb(8 24 39 / 0.8);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+}
+
+/*
+  Aparición al hacer scroll, una sola vez (ver src/components/RevealManager.tsx).
+  Sin JavaScript o con reduced motion el contenido se ve siempre: solo se oculta
+  cuando RevealManager activa html[data-reveal="on"] y el elemento aún no ha entrado.
+*/
+@utility reveal {
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  body {
+    background-color: var(--color-abyss);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background-color: var(--color-teal);
+    color: var(--color-navy);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Piezas con CSS propio (animación, máscaras, diagramas)
+------------------------------------------------------------------ */
+@keyframes cx-dash {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+@keyframes cx-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+@keyframes cx-travel {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 8px);
+  }
+}
+@keyframes cx-down {
+  from {
+    top: 0;
+  }
+  to {
+    top: calc(100% - 6px);
+  }
+}
+
+@layer components {
+  html[data-reveal="on"] .reveal:not([data-revealed]) {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  @media print {
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  /* Trazos animados de diagramas */
+  .flow-dash {
+    stroke-dasharray: 4 8;
+    animation: cx-dash 2.8s linear infinite;
+  }
+  .pulse-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cx-pulse 3.2s ease-out infinite;
+  }
+  .is-paused,
+  .is-paused * {
+    animation-play-state: paused !important;
+  }
+
+  /* NetworkTopologyHero */
+  .topo-wrap {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: min(68%, 1040px);
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 10%, #000 46%);
+    mask-image: linear-gradient(90deg, transparent 0%, transparent 10%, #000 46%);
+  }
+  .topo-wrap svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 63.999rem) {
+    .topo-wrap {
+      position: relative;
+      inset: auto;
+      width: 100%;
+      height: 340px;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 80%, transparent 100%);
+      mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 80%, transparent 100%);
+    }
+    .topo-wrap svg {
+      width: 170%;
+      margin-left: -45%;
+    }
+    .topo-labels {
+      display: none;
+    }
+  }
+  @media (max-width: 47.999rem) {
+    .topo-heavy {
+      display: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .topo-packet {
+      display: none;
+    }
+  }
+
+  /* Línea de ciclo de vida (Home) */
+  .lifecycle-traveller {
+    animation: cx-travel 8s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  }
+
+  /* Diagrama de flujo de colaboración */
+  .flow-row {
+    display: flex;
+    align-items: stretch;
+  }
+  .flow-row > .flow-node {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .flow-conn {
+    flex: 0 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 47.999rem) {
+    .flow-row {
+      flex-direction: column;
+    }
+    .flow-conn {
+      flex-basis: 40px;
+    }
+    .flow-conn svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  /* Arquitectura lógica (About) */
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) 56px;
+    gap: 14px;
+  }
+  .arch-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    border-radius: 6px;
+    padding: 16px 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+  .arch-side--flip {
+    transform: rotate(180deg);
+  }
+  .arch-spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgb(110 159 224 / 0.35);
+  }
+  .arch-signal {
+    position: absolute;
+    left: calc(50% - 2.5px);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    animation: cx-down 5s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  }
+  .arch-layer {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+  }
+  @media (max-width: 47.999rem) {
+    .arch-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .arch-side {
+      writing-mode: horizontal-tb;
+      padding: 12px 16px;
+      min-height: 44px;
+    }
+    .arch-side--flip {
+      transform: none;
+    }
+    .arch-layer {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+    }
+  }
+
+  /* Campos de formulario */
+  .field {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 16px;
+    border: 1px solid rgb(146 167 184 / 0.38);
+    border-radius: 4px;
+    background-color: rgb(246 250 253 / 0.03);
+    color: var(--color-ink);
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.4;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s,
+      box-shadow 0.2s;
+  }
+  .field::placeholder {
+    color: var(--color-faint);
+  }
+  .field:hover {
+    border-color: rgb(146 167 184 / 0.65);
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    background-color: rgb(24 184 156 / 0.05);
+    box-shadow: 0 0 0 3px rgb(24 184 156 / 0.2);
+  }
+  .field[aria-invalid="true"] {
+    border-color: var(--color-danger);
+  }
+  .field[aria-invalid="true"]:focus {
+    box-shadow: 0 0 0 3px rgb(255 143 128 / 0.22);
+  }
+  textarea.field {
+    min-height: 160px;
+    resize: vertical;
+  }
+  select.field {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 48px;
+    cursor: pointer;
+  }
+  select.field option {
+    background-color: var(--color-deep);
+    color: var(--color-ink);
+  }
+}
+
+/* Transición de página: fundido breve, solo opacidad (sin desplazar el layout) */
+.page-enter {
+  animation: cx-page-in 0.45s ease-out both;
+}
+@keyframes cx-page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

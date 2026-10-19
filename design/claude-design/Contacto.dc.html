@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Contacto · CONEXUM</title>
+<meta name="description" content="Hablemos del siguiente reto de su infraestructura. Cuéntenos el contexto de su red y le propondremos una primera conversación técnica.">
+<meta property="og:title" content="Contacto · CONEXUM">
+<meta property="og:description" content="Hablemos del siguiente reto de su infraestructura.">
+<meta property="og:image" content="/og/conexum-og.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#061420;color:#F6FAFD;font-family:Manrope,"Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+h1,h2,h3,h4,p,ul,ol,figure,dl,dd{margin:0}
+a{color:#F6FAFD;text-decoration:none}
+a:hover{color:#18B89C}
+:focus-visible{outline:2px solid #18B89C;outline-offset:3px}
+::selection{background:#18B89C;color:#081827}
+.cx-mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.cx-skip{position:absolute;left:-9999px;top:12px;z-index:100;padding:12px 16px;background:#18B89C;color:#081827;font-weight:600;border-radius:4px}
+.cx-skip:focus{left:16px;color:#081827}
+.cx-navlink{position:relative;display:inline-flex;align-items:center;min-height:44px;color:#A9BBCA;font-size:14px;font-weight:500;transition:color .2s}
+.cx-navlink::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:#18B89C;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.cx-navlink:hover,.cx-navlink[aria-current="page"]{color:#F6FAFD}
+.cx-navlink:hover::after,.cx-navlink[aria-current="page"]::after{transform:scaleX(1)}
+.cx-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:4px;font-family:inherit;font-size:15px;font-weight:600;line-height:1.2;transition:background-color .2s,border-color .2s,color .2s;cursor:pointer}
+.cx-btn svg{flex:none;transition:transform .25s ease}
+.cx-btn:hover svg{transform:translateX(3px)}
+.cx-btn-primary{background:#18B89C;color:#081827;border:1px solid #18B89C}
+.cx-btn-primary:hover{background:#3FD0B5;border-color:#3FD0B5;color:#081827}
+.cx-btn-ghost{background:transparent;color:#F6FAFD;border:1px solid rgba(246,250,253,.3)}
+.cx-btn-ghost:hover{border-color:#F6FAFD;color:#F6FAFD;background:rgba(246,250,253,.05)}
+.cx-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:600;color:#F6FAFD}
+.cx-link span{border-bottom:1px solid rgba(24,184,156,.55);padding-bottom:3px;transition:border-color .2s}
+.cx-link:hover{color:#18B89C}
+.cx-link:hover span{border-color:#18B89C}
+.cx-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(246,250,253,.24);border-radius:4px;background:transparent;color:#F6FAFD;cursor:pointer}
+.cx-menu-link{display:flex;align-items:center;justify-content:space-between;min-height:58px;font-size:22px;font-weight:600;letter-spacing:-.01em;border-bottom:1px solid rgba(146,167,184,.14)}
+.cx-menu-link[aria-current="page"]{color:#18B89C}
+@media (max-width:960px){.cx-desk{display:none !important}.cx-burger{display:inline-flex}}
+@media (min-width:961px){.cx-mobile-only{display:none !important}}
+.cx-flink{color:#A9BBCA;font-size:14px;transition:color .2s}
+.cx-flink:hover{color:#F6FAFD}
+@keyframes cx-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cx-rise{animation:cx-rise .9s cubic-bezier(.2,.7,.2,1) both}
+.cx-d1{animation-delay:.1s}.cx-d2{animation-delay:.22s}.cx-d3{animation-delay:.34s}
+@keyframes cx-blink{0%,100%{opacity:1}50%{opacity:.3}}
+.cx-blink{animation:cx-blink 2.4s ease-in-out infinite}
+.cx-label{font-size:14px;font-weight:600;color:#F6FAFD}
+.cx-field{width:100%;min-height:52px;padding:14px 16px;border:1px solid rgba(146,167,184,.38);border-radius:4px;background:rgba(246,250,253,.03);color:#F6FAFD;font-family:inherit;font-size:16px;line-height:1.4;transition:border-color .2s,background-color .2s,box-shadow .2s}
+.cx-field::placeholder{color:#7F95A8}
+.cx-field:hover{border-color:rgba(146,167,184,.65)}
+.cx-field:focus{outline:none;border-color:#18B89C;background:rgba(24,184,156,.05);box-shadow:0 0 0 3px rgba(24,184,156,.2)}
+.cx-field[aria-invalid="true"]{border-color:#FF8F80}
+.cx-field[aria-invalid="true"]:focus{box-shadow:0 0 0 3px rgba(255,143,128,.22)}
+textarea.cx-field{min-height:160px;resize:vertical}
+.cx-select{appearance:none;-webkit-appearance:none;padding-right:48px;cursor:pointer}
+.cx-select option{background:#10283D;color:#F6FAFD}
+.cx-err{font-size:13px;line-height:1.4;color:#FF8F80}
+.cx-check{width:22px;height:22px;margin:1px 0 0;flex:none;accent-color:#18B89C;cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div style="background:#081827;color:#F6FAFD;font-family:Manrope,'Segoe UI',system-ui,sans-serif">
+<a class="cx-skip" href="#contenido">Saltar al contenido</a>
+
+<!-- SiteHeader -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(8,24,39,.8);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid rgba(146,167,184,.16)">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+<!-- BrandLogo · LOGO PLACEHOLDER · REEMPLAZAR (logoSrc: /brand/conexum-logo.svg) -->
+<a href="{{nav.home}}" aria-label="CONEXUM, ir a la página de inicio" data-component="BrandLogo" data-placeholder="LOGO PLACEHOLDER · REEMPLAZAR" style="display:inline-flex;align-items:center;gap:12px;color:#F6FAFD;min-height:44px">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M22 5H8.5A3.5 3.5 0 0 0 5 8.5v11A3.5 3.5 0 0 0 8.5 23H22" stroke="#F6FAFD" stroke-width="1.6"></path><path d="M5 14h7" stroke="#3977C8" stroke-width="1.6"></path><circle cx="22" cy="5" r="2.4" fill="#F6FAFD"></circle><circle cx="22" cy="23" r="2.4" fill="#F6FAFD"></circle><circle cx="15.5" cy="14" r="3" fill="#18B89C"></circle></svg>
+<span style="font-size:15px;font-weight:700;letter-spacing:.22em">CONEXUM</span>
+</a>
+<nav aria-label="Principal" class="cx-desk" style="display:flex;align-items:center;gap:36px">
+<a class="cx-navlink" href="{{nav.home}}">Home</a>
+<a class="cx-navlink" href="{{nav.about}}">About</a>
+<a class="cx-navlink" href="{{nav.servicios}}">Servicios</a>
+<a class="cx-navlink" href="{{nav.contacto}}" aria-current="page">Contacto</a>
+</nav>
+<div style="display:flex;align-items:center;gap:12px">
+<a class="cx-btn cx-btn-primary cx-desk" href="#formulario" style="min-height:44px;padding:0 18px;font-size:14px">Hablemos de su infraestructura</a>
+<button type="button" class="cx-burger" aria-label="{{menuLabel}}" aria-expanded="{{menuExpanded}}" aria-controls="cx-menu" onClick="{{toggleMenu}}">
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></sc-if>
+<sc-if value="{{menuClosed}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></sc-if>
+</button>
+</div>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<div id="cx-menu" class="cx-mobile-only" style="position:absolute;left:0;right:0;top:100%;background:#081827;border-bottom:1px solid rgba(146,167,184,.2);padding:8px clamp(20px,5vw,64px) 28px">
+<nav aria-label="Menú móvil" style="display:flex;flex-direction:column">
+<a class="cx-menu-link" href="{{nav.home}}" onClick="{{closeMenu}}">Home</a>
+<a class="cx-menu-link" href="{{nav.about}}" onClick="{{closeMenu}}">About</a>
+<a class="cx-menu-link" href="{{nav.servicios}}" onClick="{{closeMenu}}">Servicios</a>
+<a class="cx-menu-link" href="{{nav.contacto}}" aria-current="page" onClick="{{closeMenu}}">Contacto</a>
+</nav>
+<div style="display:flex;flex-direction:column;gap:14px;padding-top:24px">
+<a class="cx-btn cx-btn-primary" href="#formulario" onClick="{{closeMenu}}" style="width:100%">Hablemos de su infraestructura</a>
+<p class="cx-mono" style="font-size:12px;color:#92A7B8;letter-spacing:.04em">info@conexum.one · correo provisional</p>
+</div>
+</div>
+</sc-if>
+</header>
+
+<main id="contenido">
+
+<!-- Hero Contacto -->
+<section aria-labelledby="contacto-title" style="background-color:#081827;background-image:radial-gradient(rgba(146,167,184,.12) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid rgba(146,167,184,.14)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,5vw,64px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:28px">
+<p class="cx-mono cx-rise" style="display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.16em;color:#92A7B8"><span class="cx-blink" style="width:7px;height:7px;border-radius:50%;background:#18B89C;flex:none"></span>CONTACTO</p>
+<h1 id="contacto-title" class="cx-rise cx-d1" style="max-width:1000px;font-size:clamp(36px,5.6vw,80px);line-height:1.02;letter-spacing:-.04em;font-weight:600;text-wrap:balance">Hablemos del siguiente reto <span style="color:#92A7B8">de su infraestructura.</span></h1>
+<p class="cx-rise cx-d2" style="max-width:600px;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:#B4C4D2">Cuéntenos el contexto de su red y lo que necesita resolver. Cuanto más concreto sea, más útil será la primera conversación técnica.</p>
+</div>
+</section>
+
+<!-- Formulario + información -->
+<section id="formulario" aria-label="Formulario de contacto" style="background:#081827;padding:clamp(56px,7vw,96px) 0 clamp(80px,10vw,128px)">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:40px 56px;align-items:flex-start">
+
+<!-- ContactForm -->
+<div data-component="ContactForm" style="flex:999 1 560px;min-width:0;border:1px solid rgba(146,167,184,.22);border-radius:10px;background:#0B2033;padding:clamp(22px,3.4vw,44px)">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{onSubmit}}" aria-describedby="cf-demo" style="display:flex;flex-direction:column;gap:24px">
+<div id="cf-demo" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding-bottom:22px;border-bottom:1px solid rgba(146,167,184,.16)">
+<span class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#18B89C;border:1px solid rgba(24,184,156,.55);border-radius:3px;padding:5px 9px">FORMULARIO DEMO</span>
+<span style="font-size:14px;color:#A9BBCA">El envío todavía no está conectado. Los campos marcados con * son obligatorios.</span>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<label class="cx-label" for="cf-nombre">Nombre y apellidos <span aria-hidden="true" style="color:#18B89C">*</span></label>
+<input id="cf-nombre" name="nombre" type="text" autocomplete="name" class="cx-field" aria-required="true" aria-invalid="{{inv.nombre}}" aria-describedby="cf-nombre-err">
+<p id="cf-nombre-err" class="cx-err">{{err.nombre}}</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<label class="cx-label" for="cf-empresa">Empresa <span aria-hidden="true" style="color:#18B89C">*</span></label>
+<input id="cf-empresa" name="empresa" type="text" autocomplete="organization" class="cx-field" aria-required="true" aria-invalid="{{inv.empresa}}" aria-describedby="cf-empresa-err">
+<p id="cf-empresa-err" class="cx-err">{{err.empresa}}</p>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<label class="cx-label" for="cf-correo">Correo corporativo <span aria-hidden="true" style="color:#18B89C">*</span></label>
+<input id="cf-correo" name="correo" type="text" inputmode="email" autocomplete="email" spellcheck="false" placeholder="nombre@empresa.com" class="cx-field" aria-required="true" aria-invalid="{{inv.correo}}" aria-describedby="cf-correo-err">
+<p id="cf-correo-err" class="cx-err">{{err.correo}}</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<label class="cx-label" for="cf-tipo">Tipo de necesidad <span aria-hidden="true" style="color:#18B89C">*</span></label>
+<div style="position:relative">
+<select id="cf-tipo" name="tipo" class="cx-field cx-select" aria-required="true" aria-invalid="{{inv.tipo}}" aria-describedby="cf-tipo-err">
+<option value="">Seleccione una opción</option>
+<option value="redes">Ingeniería de redes corporativas</option>
+<option value="sdwan">SD-WAN y Cloud Networking</option>
+<option value="noc">NOC y monitorización</option>
+<option value="seguridad">Ciberseguridad y Zero Trust</option>
+<option value="arquitectura">Arquitectura y transformación</option>
+<option value="healthcheck">Cisco Network Health Check</option>
+<option value="partners">Servicios para partners (MSP / integrador)</option>
+<option value="otra">Otra consulta</option>
+</select>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="position:absolute;right:16px;top:50%;margin-top:-8px;pointer-events:none"><path d="M4 6l4 4 4-4" stroke="#92A7B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<p id="cf-tipo-err" class="cx-err">{{err.tipo}}</p>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<label class="cx-label" for="cf-mensaje">Mensaje <span aria-hidden="true" style="color:#18B89C">*</span></label>
+<p id="cf-mensaje-hint" style="font-size:13px;line-height:1.5;color:#92A7B8">Describa el contexto: tecnologías, número de sedes, plazos o el problema que quiere resolver.</p>
+<textarea id="cf-mensaje" name="mensaje" rows="6" class="cx-field" aria-required="true" aria-invalid="{{inv.mensaje}}" aria-describedby="cf-mensaje-hint cf-mensaje-err"></textarea>
+<p id="cf-mensaje-err" class="cx-err">{{err.mensaje}}</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:14px;align-items:flex-start">
+<input id="cf-privacidad" name="privacidad" type="checkbox" value="si" class="cx-check" aria-required="true" aria-invalid="{{inv.privacidad}}" aria-describedby="cf-privacidad-err">
+<label for="cf-privacidad" style="font-size:14px;line-height:1.6;color:#A9BBCA">He leído y acepto la <a href="#privacidad" style="color:#F6FAFD;text-decoration:underline;text-underline-offset:3px">política de privacidad</a>. Autorizo el uso de estos datos únicamente para responder a esta solicitud. <span aria-hidden="true" style="color:#18B89C">*</span></label>
+</div>
+<p id="cf-privacidad-err" class="cx-err">{{err.privacidad}}</p>
+</div>
+
+<p role="status" aria-live="polite" class="cx-mono" style="font-size:12px;letter-spacing:.06em;color:#FF8F80">{{status}}</p>
+
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;padding-top:4px">
+<button type="submit" class="cx-btn cx-btn-primary">Enviar solicitud <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+<p style="font-size:13px;line-height:1.5;color:#92A7B8">Modo demo: no se enviará ningún dato.</p>
+</div>
+</form>
+</sc-if>
+
+<sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+<div role="status" aria-live="polite" style="display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;align-items:center;gap:14px">
+<span aria-hidden="true" style="width:44px;height:44px;border-radius:50%;border:1px solid #18B89C;background:rgba(24,184,156,.1);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 18 18" fill="none"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+<span class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#18B89C">MODO DEMO</span>
+</div>
+<h2 style="font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-.025em;font-weight:600">Solicitud preparada (demo).</h2>
+<p style="font-size:17px;line-height:1.6;color:#B4C4D2;max-width:560px">La integración de envío está pendiente. Ningún dato ha salido de su navegador ni ha llegado a CONEXUM.</p>
+<dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:18px 24px;padding:22px 0;border-top:1px solid rgba(146,167,184,.18);border-bottom:1px solid rgba(146,167,184,.18)">
+<div style="display:flex;flex-direction:column;gap:6px"><dt class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8">NOMBRE</dt><dd style="font-size:16px;color:#F6FAFD;overflow-wrap:anywhere">{{summary.nombre}}</dd></div>
+<div style="display:flex;flex-direction:column;gap:6px"><dt class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8">EMPRESA</dt><dd style="font-size:16px;color:#F6FAFD;overflow-wrap:anywhere">{{summary.empresa}}</dd></div>
+<div style="display:flex;flex-direction:column;gap:6px"><dt class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#92A7B8">NECESIDAD</dt><dd style="font-size:16px;color:#F6FAFD">{{summary.tipo}}</dd></div>
+</dl>
+<button type="button" class="cx-btn cx-btn-ghost" onClick="{{reset}}" style="align-self:flex-start">Preparar otra solicitud</button>
+</div>
+</sc-if>
+</div>
+
+<!-- Información -->
+<aside aria-label="Información de contacto" style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div style="border:1px solid rgba(146,167,184,.22);border-radius:10px;padding:26px 26px 24px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">CORREO</p>
+<span class="cx-mono" style="font-size:10.5px;letter-spacing:.12em;color:#92A7B8;border:1px solid rgba(146,167,184,.4);border-radius:3px;padding:4px 8px">PROVISIONAL</span>
+</div>
+<a href="mailto:info@conexum.one" style="font-size:22px;font-weight:600;letter-spacing:-.01em;color:#F6FAFD;overflow-wrap:anywhere">info@conexum.one</a>
+<p style="font-size:13px;line-height:1.55;color:#92A7B8">Dirección configurable desde la configuración del sitio.</p>
+</div>
+<div style="border:1px solid rgba(146,167,184,.22);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:18px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">QUÉ OCURRE DESPUÉS</p>
+<ol style="list-style:none;padding:0;display:flex;flex-direction:column;gap:16px">
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px"><span class="cx-mono" style="font-size:12px;color:#18B89C;padding-top:2px">01</span><p style="font-size:15px;line-height:1.55;color:#D5E1EB">Revisamos su solicitud con criterio técnico.</p></li>
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px"><span class="cx-mono" style="font-size:12px;color:#18B89C;padding-top:2px">02</span><p style="font-size:15px;line-height:1.55;color:#D5E1EB">Le proponemos una conversación inicial para entender el contexto y el alcance.</p></li>
+<li style="display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px"><span class="cx-mono" style="font-size:12px;color:#18B89C;padding-top:2px">03</span><p style="font-size:15px;line-height:1.55;color:#D5E1EB">Definimos el siguiente paso: Health Check, diseño o servicio recurrente.</p></li>
+</ol>
+</div>
+<div style="border:1px solid rgba(24,184,156,.35);border-radius:10px;background:rgba(24,184,156,.05);padding:26px;display:flex;flex-direction:column;gap:10px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#18B89C">SI ES PARTNER</p>
+<p style="font-size:15px;line-height:1.6;color:#D5E1EB">Indique si la solicitud es para un cliente final y si necesita servicio en marca blanca o soporte back-to-back.</p>
+</div>
+<p style="font-size:13px;line-height:1.6;color:#92A7B8;padding:0 4px">Servicio remoto para organizaciones y partners en España.</p>
+</aside>
+
+</div>
+</section>
+
+</main>
+
+<!-- SiteFooter -->
+<footer style="background:#061420;border-top:1px solid rgba(146,167,184,.14)">
+<div style="max-width:1280px;margin:0 auto;padding:72px clamp(20px,5vw,64px) 32px;display:flex;flex-direction:column;gap:56px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:40px 48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<a href="{{nav.home}}" aria-label="CONEXUM, ir a la página de inicio" style="display:inline-flex;align-items:center;gap:12px;color:#F6FAFD;align-self:flex-start;min-height:44px">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M22 5H8.5A3.5 3.5 0 0 0 5 8.5v11A3.5 3.5 0 0 0 8.5 23H22" stroke="#F6FAFD" stroke-width="1.6"></path><path d="M5 14h7" stroke="#3977C8" stroke-width="1.6"></path><circle cx="22" cy="5" r="2.4" fill="#F6FAFD"></circle><circle cx="22" cy="23" r="2.4" fill="#F6FAFD"></circle><circle cx="15.5" cy="14" r="3" fill="#18B89C"></circle></svg>
+<span style="font-size:15px;font-weight:700;letter-spacing:.22em">CONEXUM</span>
+</a>
+<p style="font-size:14px;line-height:1.65;color:#A9BBCA;max-width:300px">Ingeniería de redes, operación y soporte especializado para infraestructuras de misión crítica. Servicio remoto para organizaciones y partners en España.</p>
+</div>
+<nav aria-label="Pie de página" style="display:flex;flex-direction:column;gap:16px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">NAVEGACIÓN</p>
+<ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px">
+<li><a class="cx-flink" href="{{nav.home}}">Home</a></li>
+<li><a class="cx-flink" href="{{nav.about}}">About</a></li>
+<li><a class="cx-flink" href="{{nav.servicios}}">Servicios</a></li>
+<li><a class="cx-flink" href="{{nav.contacto}}">Contacto</a></li>
+</ul>
+</nav>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">SERVICIOS</p>
+<ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px">
+<li><a class="cx-flink" href="{{nav.servicios}}">Ingeniería de redes corporativas</a></li>
+<li><a class="cx-flink" href="{{nav.servicios}}">SD-WAN y Cloud Networking</a></li>
+<li><a class="cx-flink" href="{{nav.servicios}}">NOC y monitorización</a></li>
+<li><a class="cx-flink" href="{{nav.servicios}}">Ciberseguridad y Zero Trust</a></li>
+<li><a class="cx-flink" href="{{nav.servicios}}">Arquitectura y transformación</a></li>
+<li><a class="cx-flink" href="{{nav.servicios}}">Servicios para partners</a></li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">CONTACTO</p>
+<a href="mailto:info@conexum.one" style="font-size:17px;font-weight:600;color:#F6FAFD">info@conexum.one</a>
+<p class="cx-mono" style="font-size:11px;letter-spacing:.08em;line-height:1.6;color:#92A7B8">CORREO PROVISIONAL · CONFIGURABLE</p>
+<a class="cx-link" href="#formulario"><span>Hablemos de su infraestructura</span></a>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid rgba(146,167,184,.14)">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 32px;font-size:13px;color:#92A7B8">
+<p>© 2026 CONEXUM · Demo comercial</p>
+<ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px 24px">
+<li><a class="cx-flink" href="#aviso-legal" style="font-size:13px">Aviso legal</a></li>
+<li><a class="cx-flink" href="#privacidad" style="font-size:13px">Privacidad</a></li>
+<li><a class="cx-flink" href="#cookies" style="font-size:13px">Cookies</a></li>
+</ul>
+</div>
+<p style="font-size:12px;line-height:1.6;color:#7F95A8;max-width:860px">Cisco, Meraki, ThousandEyes y Splunk son marcas de sus respectivos titulares. Su mención describe experiencia técnica y no implica relación comercial, certificación ni partnership con dichos fabricantes.</p>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"variante":{"editor":null,"default":""},"$preview":{"width":1440,"height":2400}}'>
+class Component extends DCLogic {
+  _tipos() {
+    return {
+      redes: 'Ingeniería de redes corporativas',
+      sdwan: 'SD-WAN y Cloud Networking',
+      noc: 'NOC y monitorización',
+      seguridad: 'Ciberseguridad y Zero Trust',
+      arquitectura: 'Arquitectura y transformación',
+      healthcheck: 'Cisco Network Health Check',
+      partners: 'Servicios para partners',
+      otra: 'Otra consulta'
+    };
+  }
+
+  _handlers() {
+    if (this.__h) return this.__h;
+    const self = this;
+    this.__h = {
+      toggleMenu: () => self.setState({ menuOpen: !(self.state && self.state.menuOpen) }),
+      closeMenu: () => self.setState({ menuOpen: false }),
+      reset: () => self.setState({ sent: false, err: {}, status: '', summary: null }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const fd = new FormData(form);
+        const v = {
+          nombre: String(fd.get('nombre') || '').trim(),
+          empresa: String(fd.get('empresa') || '').trim(),
+          correo: String(fd.get('correo') || '').trim(),
+          tipo: String(fd.get('tipo') || ''),
+          mensaje: String(fd.get('mensaje') || '').trim(),
+          privacidad: fd.get('privacidad') === 'si'
+        };
+        const err = {};
+        if (v.nombre.length < 2) err.nombre = 'Indique su nombre.';
+        if (v.empresa.length < 2) err.empresa = 'Indique el nombre de su empresa.';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.correo)) err.correo = 'Introduzca un correo electrónico válido.';
+        if (!v.tipo) err.tipo = 'Seleccione el tipo de necesidad.';
+        if (v.mensaje.length < 20) err.mensaje = 'Describa brevemente su necesidad (mínimo 20 caracteres).';
+        if (!v.privacidad) err.privacidad = 'Necesitamos su consentimiento para tratar la solicitud.';
+        const keys = Object.keys(err);
+        if (keys.length) {
+          self.setState({
+            err: err,
+            status: keys.length === 1 ? 'Revise el campo marcado.' : 'Revise los ' + keys.length + ' campos marcados.'
+          });
+          setTimeout(() => {
+            const el = form.querySelector('[name="' + keys[0] + '"]');
+            if (el && el.focus) el.focus();
+          }, 0);
+          return;
+        }
+        // Integración pendiente: enviar a una API route propia (/api/contact) conectada
+        // con Resend o Formspree desde el servidor. Nunca exponer claves en el cliente.
+        self.setState({
+          sent: true,
+          err: {},
+          status: '',
+          summary: { nombre: v.nombre, empresa: v.empresa, tipo: self._tipos()[v.tipo] || v.tipo }
+        });
+      }
+    };
+    return this.__h;
+  }
+
+  renderVals() {
+    const s = this.state || {};
+    const h = this._handlers();
+    const m = this.props.variante === 'movil';
+    const menuOpen = !!s.menuOpen;
+    const e = s.err || {};
+    const err = {
+      nombre: e.nombre || '',
+      empresa: e.empresa || '',
+      correo: e.correo || '',
+      tipo: e.tipo || '',
+      mensaje: e.mensaje || '',
+      privacidad: e.privacidad || ''
+    };
+    const inv = {};
+    Object.keys(err).forEach((k) => { inv[k] = err[k] ? 'true' : 'false'; });
+    return {
+      nav: {
+        home: m ? 'Home-movil.dc.html' : 'Main.dc.html',
+        about: m ? 'About-movil.dc.html' : 'About.dc.html',
+        servicios: m ? 'Servicios-movil.dc.html' : 'Servicios.dc.html',
+        contacto: m ? 'Contacto-movil.dc.html' : 'Contacto.dc.html'
+      },
+      menuOpen: menuOpen,
+      menuClosed: !menuOpen,
+      menuExpanded: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Cerrar menú' : 'Abrir menú',
+      toggleMenu: h.toggleMenu,
+      closeMenu: h.closeMenu,
+      onSubmit: h.onSubmit,
+      reset: h.reset,
+      sent: !!s.sent,
+      notSent: !s.sent,
+      err: err,
+      inv: inv,
+      status: s.status || '',
+      summary: s.summary || { nombre: '', empresa: '', tipo: '' }
+    };
+  }
+}
+</script>
+</body>
+</html>

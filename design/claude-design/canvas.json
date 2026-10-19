@@ -1,0 +1,34 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-19T10:00:00Z"},
+  "title": "CONEXUM · Website corporativo B2B",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 5500, "title": "Home · Escritorio", "expand": "fill", "is_interactive": true},
+    "About.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 6900, "title": "About · Escritorio", "expand": "fill", "is_interactive": true},
+    "Servicios.dc.html": {"x": 3040, "y": 0, "w": 1440, "h": 7200, "title": "Servicios · Escritorio", "expand": "fill", "is_interactive": true},
+    "Contacto.dc.html": {"x": 4560, "y": 0, "w": 1440, "h": 2400, "title": "Contacto · Escritorio", "expand": "fill", "is_interactive": true},
+    "Sistema.dc.html": {"x": 6080, "y": 0, "w": 1440, "h": 2200, "title": "Sistema visual y componentes"},
+    "Home-movil.dc.html": {"x": 0, "y": 7620, "w": 390, "h": 10400, "title": "Home · Móvil", "is_interactive": true},
+    "About-movil.dc.html": {"x": 1520, "y": 7620, "w": 390, "h": 10800, "title": "About · Móvil", "is_interactive": true},
+    "Servicios-movil.dc.html": {"x": 3040, "y": 7620, "w": 390, "h": 11400, "title": "Servicios · Móvil", "is_interactive": true},
+    "Contacto-movil.dc.html": {"x": 4560, "y": 7620, "w": 390, "h": 4400, "title": "Contacto · Móvil", "is_interactive": true}
+  },
+  "order": [
+    "Main.dc.html",
+    "About.dc.html",
+    "Servicios.dc.html",
+    "Contacto.dc.html",
+    "Sistema.dc.html",
+    "Home-movil.dc.html",
+    "About-movil.dc.html",
+    "Servicios-movil.dc.html",
+    "Contacto-movil.dc.html"
+  ],
+  "notes": {
+    "titulo-escritorio": {"x": 0, "y": -300, "text": "Escritorio · 1440 px", "kind": "title1", "maxW": 7520},
+    "titulo-movil": {"x": 0, "y": 7320, "text": "Móvil · 390 px", "kind": "title1", "maxW": 4950}
+  },
+  "designSystems": []
+}

@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Servicios · CONEXUM, ingeniería de redes y operación</title>
+<meta name="description" content="Ingeniería de redes corporativas, SD-WAN y Cloud Networking, NOC y monitorización, ciberseguridad y Zero Trust, arquitectura y transformación, y servicios para partners.">
+<meta property="og:title" content="Servicios · CONEXUM">
+<meta property="og:description" content="Ingeniería de red, del diseño a la operación diaria.">
+<meta property="og:image" content="/og/conexum-og.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#061420;color:#F6FAFD;font-family:Manrope,"Segoe UI",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+h1,h2,h3,h4,p,ul,ol,figure,dl,dd{margin:0}
+a{color:#F6FAFD;text-decoration:none}
+a:hover{color:#18B89C}
+:focus-visible{outline:2px solid #18B89C;outline-offset:3px}
+::selection{background:#18B89C;color:#081827}
+.cx-mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.cx-skip{position:absolute;left:-9999px;top:12px;z-index:100;padding:12px 16px;background:#18B89C;color:#081827;font-weight:600;border-radius:4px}
+.cx-skip:focus{left:16px;color:#081827}
+.cx-navlink{position:relative;display:inline-flex;align-items:center;min-height:44px;color:#A9BBCA;font-size:14px;font-weight:500;transition:color .2s}
+.cx-navlink::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:#18B89C;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.cx-navlink:hover,.cx-navlink[aria-current="page"]{color:#F6FAFD}
+.cx-navlink:hover::after,.cx-navlink[aria-current="page"]::after{transform:scaleX(1)}
+.cx-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:4px;font-size:15px;font-weight:600;line-height:1.2;transition:background-color .2s,border-color .2s,color .2s;cursor:pointer}
+.cx-btn svg{flex:none;transition:transform .25s ease}
+.cx-btn:hover svg{transform:translateX(3px)}
+.cx-btn-primary{background:#18B89C;color:#081827;border:1px solid #18B89C}
+.cx-btn-primary:hover{background:#3FD0B5;border-color:#3FD0B5;color:#081827}
+.cx-btn-ghost{background:transparent;color:#F6FAFD;border:1px solid rgba(246,250,253,.3)}
+.cx-btn-ghost:hover{border-color:#F6FAFD;color:#F6FAFD;background:rgba(246,250,253,.05)}
+.cx-btn-dark{background:#081827;color:#F6FAFD;border:1px solid #081827}
+.cx-btn-dark:hover{background:#10283D;border-color:#10283D;color:#F6FAFD}
+.cx-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:600;color:#F6FAFD}
+.cx-link span{border-bottom:1px solid rgba(24,184,156,.55);padding-bottom:3px;transition:border-color .2s}
+.cx-link svg{transition:transform .25s ease}
+.cx-link:hover{color:#18B89C}
+.cx-link:hover span{border-color:#18B89C}
+.cx-link:hover svg{transform:translateX(3px)}
+.cx-link-dark{color:#081827}
+.cx-link-dark span{border-color:rgba(8,24,39,.35)}
+.cx-link-dark:hover{color:#0E7C69}
+.cx-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid rgba(246,250,253,.24);border-radius:4px;background:transparent;color:#F6FAFD;cursor:pointer}
+.cx-menu-link{display:flex;align-items:center;justify-content:space-between;min-height:58px;font-size:22px;font-weight:600;letter-spacing:-.01em;border-bottom:1px solid rgba(146,167,184,.14)}
+.cx-menu-link[aria-current="page"]{color:#18B89C}
+@media (max-width:960px){.cx-desk{display:none !important}.cx-burger{display:inline-flex}}
+@media (min-width:961px){.cx-mobile-only{display:none !important}}
+.cx-flink{color:#A9BBCA;font-size:14px;transition:color .2s}
+.cx-flink:hover{color:#F6FAFD}
+@keyframes cx-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cx-rise{animation:cx-rise .9s cubic-bezier(.2,.7,.2,1) both}
+.cx-d1{animation-delay:.1s}.cx-d2{animation-delay:.22s}.cx-d3{animation-delay:.34s}.cx-d4{animation-delay:.5s}
+@supports (animation-timeline:view()){.cx-reveal{animation:cx-rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@keyframes cx-dash{to{stroke-dashoffset:-48}}
+.cx-flow{stroke-dasharray:4 8;animation:cx-dash 2.8s linear infinite}
+@keyframes cx-pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+.cx-pulse{transform-box:fill-box;transform-origin:center;animation:cx-pulse 3.2s ease-out infinite}
+@keyframes cx-blink{0%,100%{opacity:1}50%{opacity:.3}}
+.cx-blink{animation:cx-blink 2.4s ease-in-out infinite}
+.cx-index a{display:flex;flex-direction:column;gap:8px;min-height:44px;padding-top:16px;border-top:1px solid rgba(146,167,184,.24);color:#D5E1EB;font-size:15px;font-weight:600;line-height:1.35;transition:border-color .25s,color .25s}
+.cx-index a:hover{border-top-color:#18B89C;color:#F6FAFD}
+.cx-index a span{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:400;letter-spacing:.14em;color:#92A7B8}
+.cx-svc-fig{transition:border-color .3s}
+.cx-svc:hover .cx-svc-fig{border-color:rgba(24,184,156,.55)}
+@media (min-width:961px){.cx-alt .cx-svc-fig{order:-1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none !important;transition:none !important}.cx-packet{display:none}}
+</style>
+</helmet>
+<div style="background:#081827;color:#F6FAFD;font-family:Manrope,'Segoe UI',system-ui,sans-serif">
+<a class="cx-skip" href="#contenido">Saltar al contenido</a>
+
+<!-- SiteHeader -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(8,24,39,.8);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid rgba(146,167,184,.16)">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+<!-- BrandLogo · LOGO PLACEHOLDER · REEMPLAZAR (logoSrc: /brand/conexum-logo.svg) -->
+<a href="{{nav.home}}" aria-label="CONEXUM, ir a la página de inicio" data-component="BrandLogo" data-placeholder="LOGO PLACEHOLDER · REEMPLAZAR" style="display:inline-flex;align-items:center;gap:12px;color:#F6FAFD;min-height:44px">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M22 5H8.5A3.5 3.5 0 0 0 5 8.5v11A3.5 3.5 0 0 0 8.5 23H22" stroke="#F6FAFD" stroke-width="1.6"></path><path d="M5 14h7" stroke="#3977C8" stroke-width="1.6"></path><circle cx="22" cy="5" r="2.4" fill="#F6FAFD"></circle><circle cx="22" cy="23" r="2.4" fill="#F6FAFD"></circle><circle cx="15.5" cy="14" r="3" fill="#18B89C"></circle></svg>
+<span style="font-size:15px;font-weight:700;letter-spacing:.22em">CONEXUM</span>
+</a>
+<nav aria-label="Principal" class="cx-desk" style="display:flex;align-items:center;gap:36px">
+<a class="cx-navlink" href="{{nav.home}}">Home</a>
+<a class="cx-navlink" href="{{nav.about}}">About</a>
+<a class="cx-navlink" href="{{nav.servicios}}" aria-current="page">Servicios</a>
+<a class="cx-navlink" href="{{nav.contacto}}">Contacto</a>
+</nav>
+<div style="display:flex;align-items:center;gap:12px">
+<a class="cx-btn cx-btn-primary cx-desk" href="{{nav.contacto}}" style="min-height:44px;padding:0 18px;font-size:14px">Hablemos de su infraestructura</a>
+<button type="button" class="cx-burger" aria-label="{{menuLabel}}" aria-expanded="{{menuExpanded}}" aria-controls="cx-menu" onClick="{{toggleMenu}}">
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></sc-if>
+<sc-if value="{{menuClosed}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></sc-if>
+</button>
+</div>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<div id="cx-menu" class="cx-mobile-only" style="position:absolute;left:0;right:0;top:100%;background:#081827;border-bottom:1px solid rgba(146,167,184,.2);padding:8px clamp(20px,5vw,64px) 28px">
+<nav aria-label="Menú móvil" style="display:flex;flex-direction:column">
+<a class="cx-menu-link" href="{{nav.home}}" onClick="{{closeMenu}}">Home</a>
+<a class="cx-menu-link" href="{{nav.about}}" onClick="{{closeMenu}}">About</a>
+<a class="cx-menu-link" href="{{nav.servicios}}" aria-current="page" onClick="{{closeMenu}}">Servicios</a>
+<a class="cx-menu-link" href="{{nav.contacto}}" onClick="{{closeMenu}}">Contacto</a>
+</nav>
+<div style="display:flex;flex-direction:column;gap:14px;padding-top:24px">
+<a class="cx-btn cx-btn-primary" href="{{nav.contacto}}" onClick="{{closeMenu}}" style="width:100%">Hablemos de su infraestructura</a>
+<p class="cx-mono" style="font-size:12px;color:#92A7B8;letter-spacing:.04em">info@conexum.one · correo provisional</p>
+</div>
+</div>
+</sc-if>
+</header>
+
+<main id="contenido">
+
+<!-- Hero Servicios -->
+<section aria-labelledby="serv-title" style="background-color:#081827;background-image:radial-gradient(rgba(146,167,184,.12) 1px,transparent 1px);background-size:32px 32px;border-bottom:1px solid rgba(146,167,184,.14)">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(64px,9vw,136px) clamp(20px,5vw,64px) clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:28px">
+<p class="cx-mono cx-rise" style="display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.16em;color:#92A7B8"><span style="width:7px;height:7px;border-radius:50%;background:#18B89C;flex:none"></span>SERVICIOS</p>
+<h1 id="serv-title" class="cx-rise cx-d1" style="max-width:1000px;font-size:clamp(36px,5.8vw,82px);line-height:1.02;letter-spacing:-.04em;font-weight:600;text-wrap:balance">Ingeniería de red, <span style="color:#92A7B8">del diseño a la operación diaria.</span></h1>
+<p class="cx-rise cx-d2" style="max-width:620px;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:#B4C4D2">Seis líneas de servicio sobre redes corporativas, entornos distribuidos y ecosistemas Cisco, para organizaciones y partners que necesitan rigor técnico y continuidad.</p>
+<nav class="cx-index cx-rise cx-d3" aria-label="Índice de servicios" style="padding-top:clamp(24px,4vw,56px)">
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr));gap:20px 24px">
+<li><a href="#redes"><span>01</span>Redes corporativas</a></li>
+<li><a href="#sdwan"><span>02</span>SD-WAN y Cloud</a></li>
+<li><a href="#noc"><span>03</span>NOC y monitorización</a></li>
+<li><a href="#seguridad"><span>04</span>Seguridad y Zero Trust</a></li>
+<li><a href="#arquitectura"><span>05</span>Arquitectura</a></li>
+<li><a href="#partners"><span>06</span>Para partners</a></li>
+</ul>
+</nav>
+</div>
+</section>
+
+<!-- Servicios (ServiceCard) -->
+<section aria-label="Líneas de servicio" style="background:#081827">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px)">
+
+<!-- 01 -->
+<article id="redes" class="cx-svc" aria-labelledby="svc1" data-component="ServiceCard" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:40px 72px;align-items:center;padding:clamp(56px,6vw,80px) 0">
+<div class="cx-reveal" style="display:flex;flex-direction:column;gap:22px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">01 / 06</p>
+<h2 id="svc1" style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:600">Ingeniería de redes corporativas</h2>
+<p style="font-size:17px;line-height:1.65;color:#A9BBCA;max-width:540px">Diseñamos, desplegamos y optimizamos redes de campus, centro de datos y WAN con arquitecturas estables, escalables y fáciles de operar.</p>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px 24px;font-size:15px;color:#D5E1EB">
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Routing dinámico BGP y OSPF</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Switching de campus y centro de datos</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Rediseño y optimización de redes existentes</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Alta disponibilidad sin puntos únicos de fallo</li>
+</ul>
+<p class="cx-mono" style="font-size:12px;letter-spacing:.06em;line-height:1.7;color:#6E9FE0">CISCO CATALYST · CISCO NEXUS · BGP · OSPF · VLAN / VRF</p>
+<a class="cx-link" href="{{nav.contacto}}" style="align-self:flex-start"><span>Solicitar una conversación técnica</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+<figure class="cx-svc-fig cx-reveal" style="border:1px solid rgba(146,167,184,.2);border-radius:8px;background-color:#0B2033;background-image:linear-gradient(rgba(146,167,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(146,167,184,.06) 1px,transparent 1px);background-size:24px 24px;padding:clamp(16px,2.4vw,28px)">
+<svg viewBox="0 0 360 220" role="img" aria-label="Esquema jerárquico: dos nodos de core, dos de distribución y cuatro de acceso, con una ruta activa resaltada." style="display:block;width:100%;height:auto">
+<g fill="none" stroke="#3977C8" stroke-opacity=".6" stroke-width="1.2">
+<path d="M150 50H210"></path>
+<path d="M150 50L100 122M150 50L260 122M210 50L100 122M210 50L260 122M100 122H260"></path>
+<path d="M100 122L50 184M100 122L130 184M260 122L230 184M260 122L310 184"></path>
+</g>
+<path class="cx-flow" d="M50 184L100 122L150 50L210 50L260 122L310 184" fill="none" stroke="#18B89C" stroke-width="1.4"></path>
+<circle class="cx-pulse" cx="150" cy="50" r="12" fill="none" stroke="#18B89C" stroke-width="1"></circle>
+<rect x="140" y="40" width="20" height="20" rx="4" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.4"></rect>
+<rect x="200" y="40" width="20" height="20" rx="4" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.4"></rect>
+<circle cx="100" cy="122" r="8" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.4"></circle>
+<circle cx="260" cy="122" r="8" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.4"></circle>
+<circle cx="50" cy="184" r="5.5" fill="#0D2338" stroke="#92A7B8" stroke-width="1.3"></circle>
+<circle cx="130" cy="184" r="5.5" fill="#0D2338" stroke="#92A7B8" stroke-width="1.3"></circle>
+<circle cx="230" cy="184" r="5.5" fill="#0D2338" stroke="#92A7B8" stroke-width="1.3"></circle>
+<circle cx="310" cy="184" r="5.5" fill="#0D2338" stroke="#92A7B8" stroke-width="1.3"></circle>
+<g fill="#92A7B8" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing=".08em" text-anchor="middle">
+<text x="180" y="24">CORE · BGP / OSPF</text>
+<text x="180" y="110">DISTRIBUCIÓN</text>
+<text x="180" y="212">ACCESO</text>
+</g>
+</svg>
+<figcaption class="cx-mono" style="margin-top:14px;font-size:11px;letter-spacing:.12em;color:#92A7B8">ESQUEMA · CORE / DISTRIBUCIÓN / ACCESO</figcaption>
+</figure>
+</article>
+
+<!-- 02 -->
+<article id="sdwan" class="cx-svc cx-alt" aria-labelledby="svc2" data-component="ServiceCard" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:40px 72px;align-items:center;padding:clamp(56px,6vw,80px) 0;border-top:1px solid rgba(146,167,184,.14)">
+<div class="cx-reveal" style="display:flex;flex-direction:column;gap:22px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">02 / 06</p>
+<h2 id="svc2" style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:600">SD-WAN y Cloud Networking</h2>
+<p style="font-size:17px;line-height:1.65;color:#A9BBCA;max-width:540px">Conectamos sedes, centros de datos y nubes con redes distribuidas gestionadas por política, visibles y coherentes en todas las ubicaciones.</p>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px 24px;font-size:15px;color:#D5E1EB">
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Diseño e implantación de SD-WAN</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Redes Cisco Meraki multi-sede</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Conectividad híbrida con nube pública</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Migración desde WAN tradicional</li>
+</ul>
+<p class="cx-mono" style="font-size:12px;letter-spacing:.06em;line-height:1.7;color:#6E9FE0">CISCO SD-WAN · CISCO MERAKI · MULTI-SEDE · NUBE HÍBRIDA</p>
+<a class="cx-link" href="{{nav.contacto}}" style="align-self:flex-start"><span>Solicitar una conversación técnica</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+<figure class="cx-svc-fig cx-reveal" style="border:1px solid rgba(146,167,184,.2);border-radius:8px;background-color:#0B2033;background-image:linear-gradient(rgba(146,167,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(146,167,184,.06) 1px,transparent 1px);background-size:24px 24px;padding:clamp(16px,2.4vw,28px)">
+<svg viewBox="0 0 360 220" role="img" aria-label="Esquema SD-WAN: cuatro sedes conectadas a un hub, con túneles overlay hacia la nube y el centro de datos." style="display:block;width:100%;height:auto">
+<g fill="none" stroke="#3977C8" stroke-opacity=".55" stroke-width="1.2">
+<path d="M58 58L180 118M58 170L180 118M302 58L180 118M302 170L180 118"></path>
+</g>
+<g fill="none" stroke="#18B89C" stroke-width="1.2">
+<path class="cx-flow" d="M180 104V44"></path>
+<path class="cx-flow" d="M180 132V180"></path>
+<path class="cx-flow" d="M58 58Q180 -4 302 58" stroke-opacity=".55"></path>
+<path class="cx-flow" d="M58 170Q180 232 302 170" stroke-opacity=".55"></path>
+</g>
+<circle cx="180" cy="30" r="14" fill="#0D2338" stroke="#92A7B8" stroke-width="1.2" stroke-dasharray="3 3"></circle>
+<circle class="cx-pulse" cx="180" cy="118" r="13" fill="none" stroke="#18B89C" stroke-width="1"></circle>
+<circle cx="180" cy="118" r="13" fill="#0D2338" stroke="#18B89C" stroke-width="1.5"></circle>
+<circle cx="180" cy="118" r="4" fill="#18B89C"></circle>
+<rect x="166" y="180" width="28" height="22" rx="3" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3"></rect>
+<path d="M171 187h18M171 191h18M171 195h18" stroke="#6E9FE0" stroke-width="1"></path>
+<rect x="50" y="50" width="16" height="16" rx="3" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3"></rect>
+<rect x="50" y="162" width="16" height="16" rx="3" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3"></rect>
+<rect x="294" y="50" width="16" height="16" rx="3" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3"></rect>
+<rect x="294" y="162" width="16" height="16" rx="3" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3"></rect>
+<g fill="#92A7B8" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing=".08em">
+<text x="24" y="90">SEDE A</text>
+<text x="24" y="150">SEDE C</text>
+<text x="290" y="90">SEDE B</text>
+<text x="290" y="150">SEDE D</text>
+<text x="202" y="34">CLOUD</text>
+<text x="202" y="122">HUB</text>
+<text x="202" y="196">DC</text>
+</g>
+</svg>
+<figcaption class="cx-mono" style="margin-top:14px;font-size:11px;letter-spacing:.12em;color:#92A7B8">ESQUEMA · OVERLAY SD-WAN MULTI-SEDE</figcaption>
+</figure>
+</article>
+
+<!-- 03 -->
+<article id="noc" class="cx-svc" aria-labelledby="svc3" data-component="ServiceCard" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:40px 72px;align-items:center;padding:clamp(56px,6vw,80px) 0;border-top:1px solid rgba(146,167,184,.14)">
+<div class="cx-reveal" style="display:flex;flex-direction:column;gap:22px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">03 / 06</p>
+<h2 id="svc3" style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:600">NOC y monitorización</h2>
+<p style="font-size:17px;line-height:1.65;color:#A9BBCA;max-width:540px">Visibilidad operativa continua sobre su red para detectar degradaciones a tiempo y gestionar cada incidencia con contexto técnico.</p>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px 24px;font-size:15px;color:#D5E1EB">
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Monitorización 24/7 y gestión de alertas</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Gestión de incidencias L2/L3</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Control y respaldo de configuraciones</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Mantenimiento programado en ventanas acordadas</li>
+</ul>
+<p class="cx-mono" style="font-size:12px;letter-spacing:.06em;line-height:1.7;color:#6E9FE0">THOUSANDEYES · SPLUNK · TELEMETRÍA · ALERTAS</p>
+<a class="cx-link" href="{{nav.contacto}}" style="align-self:flex-start"><span>Solicitar una conversación técnica</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+<figure class="cx-svc-fig cx-reveal" style="border:1px solid rgba(146,167,184,.2);border-radius:8px;background-color:#0B2033;background-image:linear-gradient(rgba(146,167,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(146,167,184,.06) 1px,transparent 1px);background-size:24px 24px;padding:clamp(16px,2.4vw,28px)">
+<svg viewBox="0 0 360 220" role="img" aria-label="Esquema NOC: una consola de operación supervisa seis nodos de red y recoge su telemetría." style="display:block;width:100%;height:auto">
+<g fill="none" stroke="#3977C8" stroke-opacity=".5" stroke-width="1.1">
+<path d="M112 100L196 52M112 100L258 52M112 100L320 52M112 100L196 132M112 100L258 132M112 100L320 132"></path>
+</g>
+<rect x="22" y="66" width="90" height="68" rx="5" fill="#0D2338" stroke="#18B89C" stroke-width="1.4"></rect>
+<path d="M34 84h44M34 96h62M34 108h30" stroke="#6E9FE0" stroke-width="1.2" stroke-linecap="round"></path>
+<circle class="cx-blink" cx="98" cy="80" r="3.5" fill="#18B89C"></circle>
+<circle class="cx-pulse" cx="258" cy="52" r="9" fill="none" stroke="#18B89C" stroke-width="1"></circle>
+<circle class="cx-pulse" cx="320" cy="132" r="9" fill="none" stroke="#18B89C" stroke-width="1" style="animation-delay:1.6s"></circle>
+<g fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3">
+<circle cx="196" cy="52" r="8"></circle><circle cx="258" cy="52" r="8" stroke="#18B89C"></circle><circle cx="320" cy="52" r="8"></circle>
+<circle cx="196" cy="132" r="8"></circle><circle cx="258" cy="132" r="8"></circle><circle cx="320" cy="132" r="8" stroke="#18B89C"></circle>
+</g>
+<path d="M22 192H120l6-12 8 22 6-16 5 6H338" fill="none" stroke="#18B89C" stroke-width="1.3" stroke-linejoin="round"></path>
+<circle class="cx-packet" r="3" fill="#F6FAFD"><animateMotion dur="5s" repeatCount="indefinite" path="M22 192H120l6-12 8 22 6-16 5 6H338"></animateMotion></circle>
+<g fill="#92A7B8" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing=".08em">
+<text x="22" y="56">NOC</text>
+<text x="186" y="28">NODOS SUPERVISADOS</text>
+<text x="22" y="172">TELEMETRÍA</text>
+</g>
+</svg>
+<figcaption class="cx-mono" style="margin-top:14px;font-size:11px;letter-spacing:.12em;color:#92A7B8">ESQUEMA · SUPERVISIÓN Y TELEMETRÍA</figcaption>
+</figure>
+</article>
+
+<!-- 04 -->
+<article id="seguridad" class="cx-svc cx-alt" aria-labelledby="svc4" data-component="ServiceCard" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:40px 72px;align-items:center;padding:clamp(56px,6vw,80px) 0;border-top:1px solid rgba(146,167,184,.14)">
+<div class="cx-reveal" style="display:flex;flex-direction:column;gap:22px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">04 / 06</p>
+<h2 id="svc4" style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:600">Ciberseguridad y Zero Trust</h2>
+<p style="font-size:17px;line-height:1.65;color:#A9BBCA;max-width:540px">Aplicamos el principio de confianza cero a la red: cada acceso se identifica, se autoriza y se limita a lo estrictamente necesario.</p>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px 24px;font-size:15px;color:#D5E1EB">
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Políticas de acceso y segmentación</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Firewalls y VPN de sede y de usuario</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Control de acceso a red con Cisco ISE</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Hardening de dispositivos y configuración</li>
+</ul>
+<p class="cx-mono" style="font-size:12px;letter-spacing:.06em;line-height:1.7;color:#6E9FE0">CISCO ISE · NGFW · VPN · 802.1X · SEGMENTACIÓN</p>
+<a class="cx-link" href="{{nav.contacto}}" style="align-self:flex-start"><span>Solicitar una conversación técnica</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+<figure class="cx-svc-fig cx-reveal" style="border:1px solid rgba(146,167,184,.2);border-radius:8px;background-color:#0B2033;background-image:linear-gradient(rgba(146,167,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(146,167,184,.06) 1px,transparent 1px);background-size:24px 24px;padding:clamp(16px,2.4vw,28px)">
+<svg viewBox="0 0 360 220" role="img" aria-label="Esquema Zero Trust: usuarios, dispositivos e IoT pasan por un motor de políticas; el acceso a aplicaciones y datos se permite y el acceso a OT se bloquea." style="display:block;width:100%;height:auto">
+<g fill="none" stroke="#3977C8" stroke-opacity=".55" stroke-width="1.2">
+<path d="M48 54L146 100M48 110H146M48 166L146 120"></path>
+</g>
+<path class="cx-flow" d="M214 100L304 54" fill="none" stroke="#18B89C" stroke-width="1.3"></path>
+<path class="cx-flow" d="M214 110H304" fill="none" stroke="#18B89C" stroke-width="1.3"></path>
+<path d="M214 120L304 166" fill="none" stroke="#92A7B8" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="2 5"></path>
+<path d="M253 137l10 10M263 137l-10 10" stroke="#92A7B8" stroke-width="1.5" stroke-linecap="round"></path>
+<rect x="146" y="78" width="68" height="64" rx="6" fill="#0D2338" stroke="#18B89C" stroke-width="1.4"></rect>
+<path d="M180 92l12 5v8c0 7-5 11-12 13-7-2-12-6-12-13v-8z" fill="none" stroke="#18B89C" stroke-width="1.2"></path>
+<g fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3">
+<circle cx="40" cy="54" r="8"></circle><circle cx="40" cy="110" r="8"></circle><circle cx="40" cy="166" r="8"></circle>
+<rect x="304" y="45" width="18" height="18" rx="3"></rect><rect x="304" y="101" width="18" height="18" rx="3"></rect><rect x="304" y="157" width="18" height="18" rx="3" stroke="#92A7B8"></rect>
+</g>
+<g fill="#92A7B8" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing=".08em">
+<text x="18" y="34">USUARIO</text>
+<text x="18" y="90">DISPOSITIVO</text>
+<text x="18" y="196">IoT</text>
+<text x="300" y="34">APPS</text>
+<text x="292" y="90">DATOS</text>
+<text x="304" y="196">OT</text>
+<text x="180" y="160" text-anchor="middle">POLÍTICA · ISE</text>
+</g>
+</svg>
+<figcaption class="cx-mono" style="margin-top:14px;font-size:11px;letter-spacing:.12em;color:#92A7B8">ESQUEMA · ACCESO BASADO EN IDENTIDAD Y POLÍTICA</figcaption>
+</figure>
+</article>
+
+<!-- 05 -->
+<article id="arquitectura" class="cx-svc" aria-labelledby="svc5" data-component="ServiceCard" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:40px 72px;align-items:center;padding:clamp(56px,6vw,80px) 0;border-top:1px solid rgba(146,167,184,.14)">
+<div class="cx-reveal" style="display:flex;flex-direction:column;gap:22px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">05 / 06</p>
+<h2 id="svc5" style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:600">Arquitectura y transformación</h2>
+<p style="font-size:17px;line-height:1.65;color:#A9BBCA;max-width:540px">Acompañamos sus decisiones de infraestructura con consultoría técnica, diseño documentado y migraciones planificadas paso a paso.</p>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px 24px;font-size:15px;color:#D5E1EB">
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Consultoría y hoja de ruta de red</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Diseño de alto y bajo nivel (HLD / LLD)</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Migraciones y renovación tecnológica</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Auditorías Cisco Network Health Check</li>
+</ul>
+<p class="cx-mono" style="font-size:12px;letter-spacing:.06em;line-height:1.7;color:#6E9FE0">HLD · LLD · MIGRACIÓN · HEALTH CHECK</p>
+<a class="cx-link" href="{{nav.contacto}}" style="align-self:flex-start"><span>Solicitar una conversación técnica</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+<figure class="cx-svc-fig cx-reveal" style="border:1px solid rgba(146,167,184,.2);border-radius:8px;background-color:#0B2033;background-image:linear-gradient(rgba(146,167,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(146,167,184,.06) 1px,transparent 1px);background-size:24px 24px;padding:clamp(16px,2.4vw,28px)">
+<svg viewBox="0 0 360 220" role="img" aria-label="Esquema de transformación: una topología actual desordenada evoluciona hacia una arquitectura objetivo jerárquica y documentada." style="display:block;width:100%;height:auto">
+<g fill="none" stroke="#92A7B8" stroke-opacity=".55" stroke-width="1.1" stroke-dasharray="3 4">
+<path d="M36 70L96 48L70 120L126 96L44 168L112 166L96 48M36 70L126 96M70 120L112 166M44 168L70 120"></path>
+</g>
+<g fill="#0D2338" stroke="#92A7B8" stroke-width="1.2">
+<circle cx="36" cy="70" r="5"></circle><circle cx="96" cy="48" r="5"></circle><circle cx="70" cy="120" r="5"></circle><circle cx="126" cy="96" r="5"></circle><circle cx="44" cy="168" r="5"></circle><circle cx="112" cy="166" r="5"></circle>
+</g>
+<path class="cx-flow" d="M150 110H206" fill="none" stroke="#18B89C" stroke-width="1.4"></path>
+<path d="M200 104l8 6-8 6" fill="none" stroke="#18B89C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
+<g fill="none" stroke="#3977C8" stroke-opacity=".65" stroke-width="1.2">
+<path d="M266 60H314M266 60L266 118M266 60L314 118M314 60L266 118M314 60L314 118M266 118L244 172M266 118L290 172M314 118L290 172M314 118L336 172"></path>
+</g>
+<g fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3">
+<rect x="257" y="51" width="18" height="18" rx="3"></rect><rect x="305" y="51" width="18" height="18" rx="3"></rect>
+<circle cx="266" cy="118" r="7"></circle><circle cx="314" cy="118" r="7"></circle>
+<circle cx="244" cy="172" r="5"></circle><circle cx="290" cy="172" r="5"></circle><circle cx="336" cy="172" r="5"></circle>
+</g>
+<g fill="#92A7B8" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing=".08em">
+<text x="30" y="24">ACTUAL</text>
+<text x="244" y="24">OBJETIVO</text>
+<text x="244" y="206" fill="#18B89C">HLD · LLD</text>
+</g>
+</svg>
+<figcaption class="cx-mono" style="margin-top:14px;font-size:11px;letter-spacing:.12em;color:#92A7B8">ESQUEMA · DE LA RED ACTUAL A LA ARQUITECTURA OBJETIVO</figcaption>
+</figure>
+</article>
+
+<!-- 06 -->
+<article id="partners" class="cx-svc cx-alt" aria-labelledby="svc6" data-component="ServiceCard" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:40px 72px;align-items:center;padding:clamp(56px,6vw,80px) 0 clamp(80px,9vw,120px);border-top:1px solid rgba(146,167,184,.14)">
+<div class="cx-reveal" style="display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">06 / 06</p>
+<span class="cx-mono" style="font-size:11px;letter-spacing:.14em;color:#18B89C;border:1px solid rgba(24,184,156,.55);border-radius:3px;padding:5px 9px">MSP · INTEGRADORES</span>
+</div>
+<h2 id="svc6" style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:600">Servicios para partners</h2>
+<p style="font-size:17px;line-height:1.65;color:#A9BBCA;max-width:540px">Capacidad de ingeniería para MSPs e integradores que necesitan escalar su servicio técnico sin perder la relación con su cliente.</p>
+<ul style="list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px 24px;font-size:15px;color:#D5E1EB">
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Engineering-on-demand</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Escalado técnico L2/L3</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Servicio en marca blanca</li>
+<li style="display:flex;gap:10px;align-items:flex-start"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M4 9.5l3.2 3L14 5.5" stroke="#18B89C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Ventanas de mantenimiento coordinadas</li>
+</ul>
+<p style="font-size:14px;line-height:1.6;color:#92A7B8;max-width:520px">Servicio remoto. Las intervenciones físicas (smart hands) las aporta el partner o el cliente.</p>
+<a class="cx-link" href="{{nav.contacto}}" style="align-self:flex-start"><span>Solicitar una conversación técnica</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+<figure class="cx-svc-fig cx-reveal" style="border:1px solid rgba(24,184,156,.35);border-radius:8px;background-color:#0B2033;background-image:linear-gradient(rgba(146,167,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(146,167,184,.06) 1px,transparent 1px);background-size:24px 24px;padding:clamp(16px,2.4vw,28px)">
+<svg viewBox="0 0 360 220" role="img" aria-label="Esquema de escalado: el cliente final contacta con el partner en primer nivel; el partner escala a CONEXUM la ingeniería de segundo y tercer nivel y recibe la resolución." style="display:block;width:100%;height:auto">
+<rect x="14" y="62" width="92" height="64" rx="6" fill="#0D2338" stroke="#92A7B8" stroke-width="1.2"></rect>
+<rect x="134" y="62" width="92" height="64" rx="6" fill="#0D2338" stroke="#6E9FE0" stroke-width="1.3"></rect>
+<rect x="254" y="62" width="92" height="64" rx="6" fill="#0D2338" stroke="#18B89C" stroke-width="1.5"></rect>
+<path class="cx-flow" d="M106 84H134" fill="none" stroke="#6E9FE0" stroke-width="1.3"></path>
+<path class="cx-flow" d="M226 84H254" fill="none" stroke="#18B89C" stroke-width="1.3"></path>
+<path d="M254 106H226M134 106H106" fill="none" stroke="#92A7B8" stroke-opacity=".6" stroke-width="1.1" stroke-dasharray="2 4"></path>
+<path d="M248 80l6 4-6 4M128 80l6 4-6 4" fill="none" stroke="#18B89C" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M112 102l-6 4 6 4M232 102l-6 4 6 4" fill="none" stroke="#92A7B8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+<g fill="#D5E1EB" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing=".08em" text-anchor="middle">
+<text x="60" y="90">CLIENTE</text>
+<text x="60" y="104">FINAL</text>
+<text x="180" y="90">PARTNER</text>
+<text x="180" y="104">L1</text>
+<text x="300" y="90">CONEXUM</text>
+<text x="300" y="104">L2 / L3</text>
+</g>
+<g fill="#92A7B8" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing=".08em" text-anchor="middle">
+<text x="180" y="40">ESCALADO →</text>
+<text x="180" y="150">← RESOLUCIÓN</text>
+<text x="180" y="186" fill="#6E9FE0">SMART HANDS</text>
+<text x="300" y="186" fill="#18B89C">REMOTO</text>
+<text x="60" y="186">SU MARCA</text>
+</g>
+<path d="M180 160v12M300 160v12M60 160v12" stroke="#92A7B8" stroke-opacity=".5" stroke-width="1"></path>
+</svg>
+<figcaption class="cx-mono" style="margin-top:14px;font-size:11px;letter-spacing:.12em;color:#92A7B8">ESQUEMA · MODELO BACK-TO-BACK EN MARCA BLANCA</figcaption>
+</figure>
+</article>
+
+</div>
+</section>
+
+<!-- Cómo trabajamos -->
+<section aria-labelledby="metodo-title" style="background:#10283D;border-top:1px solid rgba(146,167,184,.14);padding:clamp(80px,10vw,136px) 0">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:48px 80px;align-items:start">
+<div class="cx-reveal" style="display:flex;flex-direction:column;gap:24px">
+<p class="cx-mono" style="font-size:12px;letter-spacing:.16em;color:#92A7B8">CÓMO TRABAJAMOS</p>
+<h2 id="metodo-title" style="font-size:clamp(32px,4.2vw,56px);line-height:1.06;letter-spacing:-.035em;font-weight:600;text-wrap:balance">Cinco fases. Ninguna improvisación.</h2>
+<p style="font-size:18px;line-height:1.6;color:#A9BBCA;max-width:460px">El mismo método se aplica a un diagnóstico puntual, a una migración compleja o a un servicio recurrente, con el alcance ajustado a cada caso.</p>
+<a class="cx-btn cx-btn-primary" href="{{nav.contacto}}" style="align-self:flex-start;margin-top:8px">Solicitar una conversación técnica <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+</div>
+<ol style="list-style:none;padding:0;display:flex;flex-direction:column">
+<li class="cx-reveal" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;padding-bottom:36px">
+<span aria-hidden="true" style="position:absolute;left:21px;top:44px;bottom:0;width:1px;background:rgba(146,167,184,.3)"></span>
+<span class="cx-mono" style="width:44px;height:44px;border-radius:50%;border:1px solid #6E9FE0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#F6FAFD">01</span>
+<div style="display:flex;flex-direction:column;gap:8px;padding-top:9px"><h3 style="font-size:22px;font-weight:600;letter-spacing:-.015em">Descubrimiento</h3><p style="font-size:16px;line-height:1.6;color:#A9BBCA">Entendemos su negocio, su red actual, sus prioridades y las restricciones del proyecto.</p></div>
+</li>
+<li class="cx-reveal" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;padding-bottom:36px">
+<span aria-hidden="true" style="position:absolute;left:21px;top:44px;bottom:0;width:1px;background:rgba(146,167,184,.3)"></span>
+<span class="cx-mono" style="width:44px;height:44px;border-radius:50%;border:1px solid #6E9FE0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#F6FAFD">02</span>
+<div style="display:flex;flex-direction:column;gap:8px;padding-top:9px"><h3 style="font-size:22px;font-weight:600;letter-spacing:-.015em">Evaluación</h3><p style="font-size:16px;line-height:1.6;color:#A9BBCA">Analizamos configuración, riesgos y capacidad para fijar un punto de partida objetivo.</p></div>
+</li>
+<li class="cx-reveal" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;padding-bottom:36px">
+<span aria-hidden="true" style="position:absolute;left:21px;top:44px;bottom:0;width:1px;background:rgba(146,167,184,.3)"></span>
+<span class="cx-mono" style="width:44px;height:44px;border-radius:50%;border:1px solid #6E9FE0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#F6FAFD">03</span>
+<div style="display:flex;flex-direction:column;gap:8px;padding-top:9px"><h3 style="font-size:22px;font-weight:600;letter-spacing:-.015em">Diseño</h3><p style="font-size:16px;line-height:1.6;color:#A9BBCA">Definimos la solución en HLD y LLD, con plan de implantación, pruebas y vuelta atrás.</p></div>
+</li>
+<li class="cx-reveal" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;padding-bottom:36px">
+<span aria-hidden="true" style="position:absolute;left:21px;top:44px;bottom:0;width:1px;background:rgba(146,167,184,.3)"></span>
+<span class="cx-mono" style="width:44px;height:44px;border-radius:50%;border:1px solid #6E9FE0;display:flex;align-items:center;justify-content:center;font-size:12px;color:#F6FAFD">04</span>
+<div style="display:flex;flex-direction:column;gap:8px;padding-top:9px"><h3 style="font-size:22px;font-weight:600;letter-spacing:-.015em">Ejecución</h3><p style="font-size:16px;line-height:1.6;color:#A9BBCA">Implantamos en ventanas acordadas, con validación posterior y documentación de cada cambio.</p></div>
+</li>
+<li class="cx-reveal" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px">
+<span class="cx-mono" style="width:44px;height:44px;border-radius:50%;border:1px solid #18B89C;background:rgba(24,184,156,.1);display:flex;align-items:center;justify-content:center;font-size:12px;color:#F6FAFD">05</span>
+<div style="display:flex;flex-direction:column;gap:8px;padding-top:9px"><h3 style="font-size:22px;font-weight:600;letter-spacing:-.015em">Mejora</h3><p style="font-size:16px;line-height:1.6;color:#A9BBCA">Revisamos resultados y operación para ajustar, optimizar y planificar la siguiente fase.</p></div>
+</li>
+</ol>
+</div>
+</section>
+
+<!-- CTA -->
+<section aria-labelledby="serv-cta" style="background:#F6FAFD;color:#081827">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(80px,10vw,128px) clamp(20px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:40px 72px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p class="cx-mono" style="display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.16em;color:#4A5F72"><span style="width:7px;height:7px;border-radius:50%;background:#18B89C"></span>SIGUIENTE PASO</p>
+<h2 id="serv-cta" style="font-size:clamp(36px,5vw,68px);line-height:1.02;letter-spacing:-.045em;font-weight:600;text-wrap:balance">Cada red tiene su contexto. Empecemos por el suyo.</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:28px">
+<p style="font-size:18px;line-height:1.6;color:#4A5F72;max-width:500px">Cuéntenos qué necesita resolver y en qué tecnologías se apoya su red. Prepararemos una primera conversación técnica a partir de ahí.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center">
+<a class="cx-btn cx-btn-dark" href="{{nav.contacto}}">Solicitar una conversación técnica <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+<a class="cx-link cx-link-dark" href="mailto:info@conexum.one"><span>info@conexum.one</span></a>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- SiteFooter -->
+<footer style="background:#061420;border-top:1px solid rgba(146,167,184,.14)">
+<div style="max-width:1280px;margin:0 auto;padding:72px clamp(20px,5vw,64px) 32px;display:flex;flex-direction:column;gap:56px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:40px 48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<a href="{{nav.home}}" aria-label="CONEXUM, ir a la página de inicio" style="display:inline-flex;align-items:center;gap:12px;color:#F6FAFD;align-self:flex-start;min-height:44px">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M22 5H8.5A3.5 3.5 0 0 0 5 8.5v11A3.5 3.5 0 0 0 8.5 23H22" stroke="#F6FAFD" stroke-width="1.6"></path><path d="M5 14h7" stroke="#3977C8" stroke-width="1.6"></path><circle cx="22" cy="5" r="2.4" fill="#F6FAFD"></circle><circle cx="22" cy="23" r="2.4" fill="#F6FAFD"></circle><circle cx="15.5" cy="14" r="3" fill="#18B89C"></circle></svg>
+<span style="font-size:15px;font-weight:700;letter-spacing:.22em">CONEXUM</span>
+</a>
+<p style="font-size:14px;line-height:1.65;color:#A9BBCA;max-width:300px">Ingeniería de redes, operación y soporte especializado para infraestructuras de misión crítica. Servicio remoto para organizaciones y partners en España.</p>
+</div>
+<nav aria-label="Pie de página" style="display:flex;flex-direction:column;gap:16px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">NAVEGACIÓN</p>
+<ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px">
+<li><a class="cx-flink" href="{{nav.home}}">Home</a></li>
+<li><a class="cx-flink" href="{{nav.about}}">About</a></li>
+<li><a class="cx-flink" href="{{nav.servicios}}">Servicios</a></li>
+<li><a class="cx-flink" href="{{nav.contacto}}">Contacto</a></li>
+</ul>
+</nav>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">SERVICIOS</p>
+<ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:10px">
+<li><a class="cx-flink" href="#redes">Ingeniería de redes corporativas</a></li>
+<li><a class="cx-flink" href="#sdwan">SD-WAN y Cloud Networking</a></li>
+<li><a class="cx-flink" href="#noc">NOC y monitorización</a></li>
+<li><a class="cx-flink" href="#seguridad">Ciberseguridad y Zero Trust</a></li>
+<li><a class="cx-flink" href="#arquitectura">Arquitectura y transformación</a></li>
+<li><a class="cx-flink" href="#partners">Servicios para partners</a></li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p class="cx-mono" style="font-size:11px;letter-spacing:.16em;color:#92A7B8">CONTACTO</p>
+<a href="mailto:info@conexum.one" style="font-size:17px;font-weight:600;color:#F6FAFD">info@conexum.one</a>
+<p class="cx-mono" style="font-size:11px;letter-spacing:.08em;line-height:1.6;color:#92A7B8">CORREO PROVISIONAL · CONFIGURABLE</p>
+<a class="cx-link" href="{{nav.contacto}}"><span>Hablemos de su infraestructura</span></a>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid rgba(146,167,184,.14)">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 32px;font-size:13px;color:#92A7B8">
+<p>© 2026 CONEXUM · Demo comercial</p>
+<ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px 24px">
+<li><a class="cx-flink" href="#aviso-legal" style="font-size:13px">Aviso legal</a></li>
+<li><a class="cx-flink" href="#privacidad" style="font-size:13px">Privacidad</a></li>
+<li><a class="cx-flink" href="#cookies" style="font-size:13px">Cookies</a></li>
+</ul>
+</div>
+<p style="font-size:12px;line-height:1.6;color:#7F95A8;max-width:860px">Cisco, Meraki, ThousandEyes y Splunk son marcas de sus respectivos titulares. Su mención describe experiencia técnica y no implica relación comercial, certificación ni partnership con dichos fabricantes.</p>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"variante":{"editor":null,"default":""},"$preview":{"width":1440,"height":7200}}'>
+class Component extends DCLogic {
+  _handlers() {
+    if (this.__h) return this.__h;
+    const self = this;
+    this.__h = {
+      toggleMenu: () => self.setState({ menuOpen: !(self.state && self.state.menuOpen) }),
+      closeMenu: () => self.setState({ menuOpen: false })
+    };
+    return this.__h;
+  }
+
+  renderVals() {
+    const s = this.state || {};
+    const h = this._handlers();
+    const m = this.props.variante === 'movil';
+    const menuOpen = !!s.menuOpen;
+    return {
+      nav: {
+        home: m ? 'Home-movil.dc.html' : 'Main.dc.html',
+        about: m ? 'About-movil.dc.html' : 'About.dc.html',
+        servicios: m ? 'Servicios-movil.dc.html' : 'Servicios.dc.html',
+        contacto: m ? 'Contacto-movil.dc.html' : 'Contacto.dc.html'
+      },
+      menuOpen: menuOpen,
+      menuClosed: !menuOpen,
+      menuExpanded: menuOpen ? 'true' : 'false',
+      menuLabel: menuOpen ? 'Cerrar menú' : 'Abrir menú',
+      toggleMenu: h.toggleMenu,
+      closeMenu: h.closeMenu
+    };
+  }
+}
+</script>
+</body>
+</html>
