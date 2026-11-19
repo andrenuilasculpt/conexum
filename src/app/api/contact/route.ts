@@ -15,6 +15,7 @@
  */
 import { NextResponse } from "next/server";
 import { toContactPayload, validateContact, type ContactPayload } from "@/lib/contact";
+import { rateLimit, sameOrigin, tooLarge } from "@/lib/server/abuse-guard";
 
 export const runtime = "nodejs";
 
@@ -41,6 +42,9 @@ async function deliver(payload: ContactPayload): Promise<boolean> {
 }
 
 export async function POST(request: Request) {
+  if (!sameOrigin(request)) return NextResponse.json({ ok: false, error: "Origen no autorizado." }, { status: 403 });
+  if (tooLarge(request, 32_000)) return NextResponse.json({ ok: false, error: "Solicitud demasiado grande." }, { status: 413 });
+  if (rateLimit(request, "contact", 5, 10 * 60_000)) return NextResponse.json({ ok: false, error: "Demasiados envíos. Prueba más tarde." }, { status: 429 });
   let body: unknown;
   try {
     body = await request.json();
